@@ -1,8 +1,8 @@
 name: Security Scan
 
 on:
-    push:
-      branches: [main]
+  push:
+    branches: [main]
 
 jobs:
   scan:
@@ -15,8 +15,8 @@ jobs:
         with:
           python-version: '3.13'
 
-      - run pip install requests
+      - run: pip install requests
 
-
-      - run: python Scanner.py 
+      - run: python Scanner.py
         continue-on-error: true
+        
