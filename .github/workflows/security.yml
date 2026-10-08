@@ -19,4 +19,3 @@ jobs:
 
       - run: python Scanner.py
         continue-on-error: true
-        
