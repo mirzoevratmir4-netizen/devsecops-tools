@@ -17,5 +17,5 @@ jobs:
 
       - run: pip install requests
 
-      - run: python Scanner.py
+      
       - run: python Scanner.py 8.8.8.8 22,80,443
