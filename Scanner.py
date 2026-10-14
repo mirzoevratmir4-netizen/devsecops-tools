@@ -1,13 +1,19 @@
 import socket
+import sys
 
-target = input("Введите IP или домен: ")
-ports_input = input("Введите порты через запятую (например 22,80,443): ")
+if len(sys.argv) < 3:
+    print("Использование: python Scanner.py <IP> <порты>")
+    print("Пример: python Scanner.py 8.8.8.8 22,80,443")
+    sys.exit(1)
+
+target = sys.argv[1]
+ports_input = sys.argv[2]
 
 ports = []
 for p in ports_input.split(","):
     ports.append(int(p.strip()))
 
-print(f"\nСканирую {target}...\n")
+print(f"Сканирую {target}...")
 
 for port in ports:
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
